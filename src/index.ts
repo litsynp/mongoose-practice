@@ -1,5 +1,12 @@
-function main() {
-  console.log('hello world')
+import { initializeExpressApp } from './app'
+import { PORT } from './config'
+
+async function run() {
+  const app = await initializeExpressApp()
+
+  app.listen(PORT, () => {
+    console.log(`Example app listening at http://localhost:${PORT}`)
+  })
 }
 
-main()
+run()
